@@ -17,11 +17,11 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from rest_framework import routers
 from rest_framework.authtoken.views import obtain_auth_token
-from api.views import *
+from api.views import user_view, tab_view
 
 router = routers.DefaultRouter()
 router.register(r'users', user_view.UserViewSet)
-router.register(r'tabs', tab_view.UserViewSet)
+router.register(r'tabs', tab_view.TabViewSet)
 
 urlpatterns = [
     url(r'^', include(router.urls)),
