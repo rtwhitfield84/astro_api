@@ -1,1 +1,2 @@
 from .user_serializer import UserSerializer, RestrictedUserSerializer
+from .tab_serializer import TabSerializer
