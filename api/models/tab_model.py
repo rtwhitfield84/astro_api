@@ -3,7 +3,8 @@ from django.db import models
 
 class Tab(models.Model):
 	"""
-		Tab table to maintain relevant information to tab
+		Tab table maintains relevant information to tab
+		@rtwhitfield84
 	"""
 	user = models.ManyToManyField(User)
 	artist_url = models.CharField(max_length=128, blank=True)
