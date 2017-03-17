@@ -25,7 +25,7 @@ SECRET_KEY = '+1!5dh#&%+t$@0(*)*c(fhb_em1e_yg88o17h)p1%=szbo(^-i'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['methegalaxy.com']
+ALLOWED_HOSTS = ['www.methegalaxy.com']
 
 
 # Application definition
