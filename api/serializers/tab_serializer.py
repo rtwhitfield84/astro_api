@@ -8,7 +8,6 @@ class TabSerializer(serializers.HyperlinkedModelSerializer):
 		model = tab_model.Tab
 		fields = (
 			'id',
-			'url',
 			'user',
 			'artist_url',
 			'chords_url',
@@ -19,4 +18,4 @@ class TabSerializer(serializers.HyperlinkedModelSerializer):
 			'spotify_track_id',
 			'youtube_video_id',
 		)
-		depth = 1
+		# depth = 1

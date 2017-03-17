@@ -7,6 +7,11 @@ class TabViewSet(viewsets.ModelViewSet):
 	"""
 	API endpoint that allows tabs to be viewed
 	"""
-
-	queryset = tab_model.Tab.objects.all() 
 	serializer_class = tab_serializer.TabSerializer
+
+	def get_queryset(self):
+		user = self.request.user
+		print("USEEEEEEEEEER:   ", user)
+		queryset = user.tab_set.all() 
+
+		return queryset
