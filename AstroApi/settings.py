@@ -25,7 +25,7 @@ SECRET_KEY = '+1!5dh#&%+t$@0(*)*c(fhb_em1e_yg88o17h)p1%=szbo(^-i'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['methegalaxy.com']
 
 
 # Application definition
@@ -69,7 +69,8 @@ MIDDLEWARE = [
 
 CORS_ORIGIN_WHITELIST = (
     'localhost:8080',
-    '127.0.0.1:8000'
+    '127.0.0.1:8000',
+    'methegalaxy.com',
     )
 
 ROOT_URLCONF = 'AstroApi.urls'
