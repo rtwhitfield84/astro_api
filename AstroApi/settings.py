@@ -29,7 +29,8 @@ DEBUG = True
 
 
 ALLOWED_HOSTS = ['www.methegalaxy.com',
-                'localhost']
+                'localhost',
+                'api-astro.herokuapp.com']
 
 
 # Application definition
