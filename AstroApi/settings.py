@@ -25,6 +25,8 @@ SECRET_KEY = '+1!5dh#&%+t$@0(*)*c(fhb_em1e_yg88o17h)p1%=szbo(^-i'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+SECURE_SSL_REDIRECT = True
+
 ALLOWED_HOSTS = ['www.methegalaxy.com']
 
 
@@ -70,6 +72,7 @@ MIDDLEWARE = [
 CORS_ORIGIN_WHITELIST = (
     'localhost:8080',
     '127.0.0.1:8000',
+    'www.methegalaxy.com',
     'methegalaxy.com',
     )
 
