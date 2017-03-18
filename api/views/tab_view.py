@@ -6,15 +6,20 @@ from rest_framework import generics
 import json
 
 class TabViewSet(generics.RetrieveUpdateDestroyAPIView):
+
     serializer_class = tab_serializer.TabSerializer
 
+
+    # def get_queryset(self):
+    #     user = self.request.user
+    #     return tab_model.Tab.objects.filter(user=user)
+
     def get_queryset(self):
-        """
-        This view should return a list of all the purchases
-        for the currently authenticated user.
-        """
         user = self.request.user
-        return tab_model.Tab.objects.filter(user=user)
+        print("USEEEEEEEEEER:   ", user)
+        queryset = user.tab_set.all()
+
+        return queryset
 
 
     def post(self, request):
@@ -36,16 +41,3 @@ class TabViewSet(generics.RetrieveUpdateDestroyAPIView):
             spotify_track_id=req_body['spotify_track_id'],
             youtube_video_id=req_body['youtube_video_id'],
             )
-
-# class TabViewSet(viewsets.ModelViewSet):
-# 	"""
-# 	API endpoint that allows tabs to be viewed
-# 	"""
-# 	serializer_class = tab_serializer.TabSerializer
-
-# 	def get_queryset(self):
-# 		user = self.request.user
-# 		print("USEEEEEEEEEER:   ", user)
-# 		queryset = user.tab_set.all() 
-
-# 		return queryset
