@@ -32,8 +32,6 @@ class RegisterView(generics.RetrieveAPIView):
             username=req_body['username'],
             email=req_body['email'],
             password=req_body['password'],
-            first_name=req_body['first_name'],
-            last_name=req_body['last_name'],
             )
 
         success = False
