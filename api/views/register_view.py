@@ -1,12 +1,15 @@
 from django.contrib.auth.models import User
 from rest_framework import generics
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import AllowAny
 from django.contrib.auth import logout, login, authenticate
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 import json
 
 
 class RegisterView(generics.RetrieveAPIView):
+
+    permission_classes = (AllowAny,)
+
 
     error_messages = {
     'invalid': 'Please enter a valid username or password',
