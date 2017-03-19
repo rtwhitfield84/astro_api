@@ -6,7 +6,7 @@ class Tab(models.Model):
 		Tab table maintains relevant information to tab
 		@rtwhitfield84
 	"""
-	user = models.ManyToManyField(User, read_only=True)
+	user = models.ManyToManyField(User)
 	artist_url = models.CharField(max_length=128, blank=True)
 	chords_url = models.CharField(max_length=128, blank=True)
 	tab_url = models.CharField(max_length=128, blank=True)
