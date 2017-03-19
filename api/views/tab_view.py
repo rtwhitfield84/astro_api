@@ -28,7 +28,7 @@ class TabView(viewsets.ModelViewSet):
         Purpose: Post a tab
         Author: @rtwhitfield84
         """
-        user = self.request.user
+        user = request.user
         queryset = tab_model.Tab.objects.filter(user=request.user)
 
         # data = request.POST
