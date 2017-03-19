@@ -34,7 +34,7 @@ class TabView(viewsets.ModelViewSet):
         # data = request.POST
         req_body = json.loads(request.body.decode())
         tab_model.Tab.objects.create(
-            user=user,
+            user=request.user,
             artist_url=req_body['artist_url'],
             chords_url=req_body['chords_url'],
             tab_url=req_body['tab_url'],
