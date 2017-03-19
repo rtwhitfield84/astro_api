@@ -15,6 +15,6 @@ class TabSerializer(serializers.HyperlinkedModelSerializer):
 			'song_title',
 			'album',
 			'spotify_track_id',
+			'spotify_album_id',
 			'youtube_video_id',
 		)
-		# depth = 1
