@@ -1,11 +1,12 @@
 from  django.contrib.auth.models import User
 from api.serializers import tab_serializer
 from api.models import tab_model
-# from rest_framework import viewsets
-from rest_framework import generics
+from rest_framework import viewsets
+# from rest_framework import generics
 import json
 
-class TabView(generics.RetrieveUpdateDestroyAPIView):
+# class TabView(generics.RetrieveUpdateDestroyAPIView):
+class TabView(viewsets.ModelViewSet):
 
     serializer_class = tab_serializer.TabSerializer
     def list(self, request):
