@@ -15,12 +15,12 @@ class TabView(viewsets.ModelViewSet):
     #     user = self.request.user
     #     return tab_model.Tab.objects.filter(user=user)
 
-    # def get_queryset(self):
-    #     user = self.request.user
-    #     print("USEEEEEEEEEER:   ", user)
-    #     queryset = user.tab_set.all()
+    def get_queryset(self):
+        user = self.request.user
+        print("USEEEEEEEEEER:   ", user)
+        queryset = user.tab_set.all()
 
-    #     return queryset
+        return queryset
 
 
     def post(self, request):
