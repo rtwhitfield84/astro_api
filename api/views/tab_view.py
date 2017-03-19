@@ -25,14 +25,16 @@ class TabView(viewsets.ModelViewSet):
 
     def post(self, request):
         """
-        Purpose: Register a user
+        Purpose: Post a tab
         Author: @rtwhitfield84
         """
+        user = self.request.user
+        queryset = tab_model.Tab.objects.filter(user=request.user)
 
         # data = request.POST
         req_body = json.loads(request.body.decode())
-        new_tab = tab_model.Tab.objects.create(
-            user=request.user,
+        tab_model.Tab.objects.create(
+            user=user,
             artist_url=req_body['artist_url'],
             chords_url=req_body['chords_url'],
             tab_url=req_body['tab_url'],
