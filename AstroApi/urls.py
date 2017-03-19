@@ -21,13 +21,13 @@ from api.views import user_view, tab_view, register_view, logout_view
 
 router = routers.DefaultRouter()
 router.register(r'users', user_view.UserViewSet)
-router.register(r'tabs', tab_view.TabViewSet, base_name='tabs')
+router.register(r'tabs', tab_view.TabViewSet.as_view(), name='tabs')
 
 urlpatterns = [
 	url(r'^admin/', admin.site.urls),
 	url(r'^', include(router.urls)),
 	url(r'^api-token-auth/', obtain_auth_token),
 	url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-	url(r'^register', register_view.RegisterView.as_view()),
-	url(r'^logout/', logout_view.Logout.as_view()),
+	url(r'^register', register_view.RegisterView.as_view(), name='register'),
+	url(r'^logout/', logout_view.Logout.as_view(), name='logout'),
 ]
