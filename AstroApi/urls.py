@@ -21,7 +21,7 @@ from api.views import user_view, tab_view, register_view, logout_view
 
 router = routers.DefaultRouter()
 router.register(r'users', user_view.UserViewSet)
-router.register(r'tabs', tab_view.TabViewSet, base_name='tabs')
+router.register(r'tabs', tab_view.TabViewSet)
 
 urlpatterns = [
 	url(r'^admin/', admin.site.urls),
@@ -32,3 +32,4 @@ urlpatterns = [
 	# url(r'^register', user_view.RegisterView.as_view()),
 	url(r'^logout/', logout_view.Logout.as_view()),
 ]
+# , base_name='tabs'
