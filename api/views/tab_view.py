@@ -8,18 +8,18 @@ import json
 class TabView(generics.RetrieveUpdateDestroyAPIView):
 
     serializer_class = tab_serializer.TabSerializer
-
-
+    def list(self, request):
+        queryset = tab_model.Tab.objects.filter(user=request.user)
     # def get_queryset(self):
     #     user = self.request.user
     #     return tab_model.Tab.objects.filter(user=user)
 
-    def get_queryset(self):
-        user = self.request.user
-        print("USEEEEEEEEEER:   ", user)
-        queryset = user.tab_set.all()
+    # def get_queryset(self):
+    #     user = self.request.user
+    #     print("USEEEEEEEEEER:   ", user)
+    #     queryset = user.tab_set.all()
 
-        return queryset
+    #     return queryset
 
 
     def post(self, request):
