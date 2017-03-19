@@ -5,7 +5,7 @@ from api.models import tab_model
 from rest_framework import generics
 import json
 
-class TabViewSet(generics.RetrieveUpdateDestroyAPIView):
+class TabView(generics.RetrieveUpdateDestroyAPIView):
 
     serializer_class = tab_serializer.TabSerializer
 
