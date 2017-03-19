@@ -3,7 +3,7 @@ from rest_framework import serializers
 from api.models import tab_model
 
 class TabSerializer(serializers.HyperlinkedModelSerializer):
-
+	user = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
 	class Meta:
 		model = tab_model.Tab
 		fields = (
