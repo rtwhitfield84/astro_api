@@ -2,6 +2,7 @@ from  django.contrib.auth.models import User
 from api.serializers import tab_serializer
 from api.models import tab_model
 from rest_framework import viewsets
+from django.http import HttpResponse
 # from rest_framework import generics
 import json
 
@@ -20,7 +21,7 @@ class TabView(viewsets.ModelViewSet):
         print("USEEEEEEEEEER:   ", user)
         queryset = user.tab_set.all()
 
-        return queryset
+        return HttpResponse(queryset, content_type='application/json')
 
 
     def post(self, request):
