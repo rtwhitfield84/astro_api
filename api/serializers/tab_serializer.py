@@ -16,6 +16,7 @@ class TabSerializer(serializers.HyperlinkedModelSerializer):
 		model = tab_model.Tab
 
 		fields = (
+			'id',
 			'user',
 			'artist_url',
 			'chords_url',
