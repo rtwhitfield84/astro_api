@@ -3,7 +3,7 @@ from rest_framework import serializers
 from api.models import tab_model
 from rest_framework.fields import CurrentUserDefault
 
-class TabSerializer(serializers.HyperlinkedModelSerializer):
+class TabSerializer(serializers.ModelSerializer):
 	# user = serializers.PrimaryKeyRelatedField(many=True)
 
 	user = serializers.HiddenField(
