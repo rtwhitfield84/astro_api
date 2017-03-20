@@ -1,11 +1,13 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
 from api.models import tab_model
+from rest_framework.fields import CurrentUserDefault
 
 class TabSerializer(serializers.HyperlinkedModelSerializer):
 	# user = serializers.PrimaryKeyRelatedField(many=True)
-	def save(self):
-		user = self.context['request'].user
+
+	user = serializers.PrimaryKeyRelatedField(read_only=True,
+			default=serializers.CurrentUserDefault())
 
 
 	class Meta:
