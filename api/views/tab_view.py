@@ -22,7 +22,7 @@ class TabView(viewsets.ModelViewSet):
         Purpose: Post a tab
         Author: @rtwhitfield84
         """
-        user = request.user
+        user = self.request.user
         print("@@@@@@@@@@@@@@@@@@@@@@@",user)
         sys.stdout.flush()
         # queryset = tab_model.Tab.objects.filter(user=user)

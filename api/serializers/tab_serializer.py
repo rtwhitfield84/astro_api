@@ -6,8 +6,9 @@ from rest_framework.fields import CurrentUserDefault
 class TabSerializer(serializers.HyperlinkedModelSerializer):
 	# user = serializers.PrimaryKeyRelatedField(many=True)
 
-	user = serializers.PrimaryKeyRelatedField(read_only=True,
-			default=serializers.CurrentUserDefault())
+	user = serializers.HiddenField(
+	    default=serializers.CurrentUserDefault()
+	)
 
 
 	class Meta:
