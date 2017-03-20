@@ -5,8 +5,8 @@ from api.serializers import user_serializer
 from rest_framework.fields import CurrentUserDefault
 
 class TabSerializer(serializers.HyperlinkedModelSerializer):
-	# user = serializers.PrimaryKeyRelatedField(many=True)
-	user = user_serializer.UserSerializer(many=True)
+	user = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+	# user = user_serializer.UserSerializer(many=True)
 	# user = serializers.HiddenField(
 	#     default=serializers.CurrentUserDefault()
 	# )
@@ -29,7 +29,6 @@ class TabSerializer(serializers.HyperlinkedModelSerializer):
 			'art_url',
 		)
 	def create(self, validated_data):
-		user_data = validated_data.pop('user')
 		tab = tab_model.Tab.objects.create(**validated_data)
 		tab.user.add(self.request.user)
 
