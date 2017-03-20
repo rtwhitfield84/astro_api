@@ -21,12 +21,13 @@ class TabView(viewsets.ModelViewSet):
         Purpose: Post a tab
         Author: @rtwhitfield84
         """
-        user = request.user
-        queryset = tab_model.Tab.objects.filter(user=request.user)
+        user = self.request.user
+        print("@@@@@@@@@@@@@@@@@@@@@@@",user)
+        queryset = tab_model.Tab.objects.filter(user=user)
 
         req_body = json.loads(request.body.decode())
         tab_model.Tab.objects.create(
-            user=request.user,
+            user=user,
             artist_url=req_body['artist_url'],
             chords_url=req_body['chords_url'],
             tab_url=req_body['tab_url'],
