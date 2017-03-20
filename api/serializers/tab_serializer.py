@@ -4,9 +4,14 @@ from api.models import tab_model
 
 class TabSerializer(serializers.HyperlinkedModelSerializer):
 	# user = serializers.PrimaryKeyRelatedField(many=True)
+	def save(self):
+		user = self.context['request'].user
+
+
 	class Meta:
 		model = tab_model.Tab
 		fields = (
+			'user'
 			'artist_url',
 			'chords_url',
 			'tab_url',
