@@ -31,6 +31,6 @@ class TabSerializer(serializers.HyperlinkedModelSerializer):
 	def create(self, validated_data):
 		tab = tab_model.Tab.objects.create(**validated_data)
 		current_user = CurrentUserDefault()
-		tab.user.add(current_user)
+		tab.user.add(current_user.pk)
 
 		return tab
