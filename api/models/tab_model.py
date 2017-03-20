@@ -16,6 +16,7 @@ class Tab(models.Model):
 	spotify_track_id = models.CharField(max_length=128, blank=True)
 	spotify_album_id = models.CharField(max_length=128, blank=True)
 	youtube_video_id = models.CharField(max_length=128, blank=True)
+	art_url = models.CharField(max_length=128, blank=True)
 
 	class Meta:
 		verbose_name_plural = 'Tabs'

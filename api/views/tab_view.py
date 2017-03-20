@@ -36,4 +36,5 @@ class TabView(viewsets.ModelViewSet):
             spotify_track_id=req_body['spotify_track_id'],
             spotify_album_id=req_body['spotify_album_id'],
             youtube_video_id=req_body['youtube_video_id'],
+            art_url=req_body['art_url'],
             )
