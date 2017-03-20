@@ -2,6 +2,7 @@ from  django.contrib.auth.models import User
 from api.serializers import tab_serializer
 from api.models import tab_model
 from rest_framework import viewsets
+import sys
 import json
 
 class TabView(viewsets.ModelViewSet):
@@ -23,6 +24,7 @@ class TabView(viewsets.ModelViewSet):
         """
         user = self.request.user
         print("@@@@@@@@@@@@@@@@@@@@@@@",user)
+        sys.stdout.flush()
         queryset = tab_model.Tab.objects.filter(user=user)
 
         req_body = json.loads(request.body.decode())
