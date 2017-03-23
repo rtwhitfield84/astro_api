@@ -29,7 +29,6 @@ class RegisterView(generics.RetrieveAPIView):
         Author: @rtwhitfield84
         """
 
-        # data = request.POST
         req_body = json.loads(request.body.decode())
         new_user = User.objects.create_user(
             username=req_body['username'],

@@ -15,29 +15,3 @@ class TabView(viewsets.ModelViewSet):
 
         return queryset
 
-
-
-    # def post(self, request):
-    #     """
-    #     Purpose: Post a tab
-    #     Author: @rtwhitfield84
-    #     """
-    #     user = self.request.user
-    #     print("@@@@@@@@@@@@@@@@@@@@@@@",user)
-    #     sys.stdout.flush()
-    #     # queryset = tab_model.Tab.objects.filter(user=user)
-
-    #     req_body = json.loads(request.body.decode())
-    #     tab_model.Tab.objects.create(
-    #         user=user,
-    #         artist_url=req_body['artist_url'],
-    #         chords_url=req_body['chords_url'],
-    #         tab_url=req_body['tab_url'],
-    #         artist_name=req_body['artist_name'],
-    #         song_title=req_body['song_title'],
-    #         album=req_body['album'],
-    #         spotify_track_id=req_body['spotify_track_id'],
-    #         spotify_album_id=req_body['spotify_album_id'],
-    #         youtube_video_id=req_body['youtube_video_id'],
-    #         art_url=req_body['art_url'],
-    #         )
